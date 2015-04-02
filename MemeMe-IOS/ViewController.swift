@@ -34,7 +34,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
 
     // MARK: User actions
-    @IBAction func shareMeme(sender: UIBarButtonItem) { }
+    @IBAction func shareMeme(sender: UIBarButtonItem) {
+        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, imageView: imageView)
+        meme.generateImage(MemeEditorView)
+        
+        Meme.saveMeme()
+        
+        let activityViewController = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: [])
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
     
     @IBAction func cancel(sender: UIBarButtonItem) { }
     
@@ -60,10 +68,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         var alert = UIAlertController(title: "Camera is not available", message: "The camera is not available while using the simulator, please deploy de application in your device", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-        
-        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, imageView: imageView)
-        meme.generateImage(MemeEditorView)
-        
         self.presentViewController(alert, animated: true){ }
     }
     
@@ -94,7 +98,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         NSNotificationCenter.defaultCenter().removeObserver(self, name:
             UIKeyboardWillHideNotification, object: nil)
     }
-    
     
     func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y += getKeyboardHeight(notification)

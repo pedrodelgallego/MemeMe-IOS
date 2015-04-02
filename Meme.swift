@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class Meme {
+    static var collection = [Meme]()
+    
     var topText: String
     var bottomText: String
     var image: UIImage
@@ -19,6 +21,10 @@ class Meme {
         self.topText = topText
         self.bottomText = bottomText
         self.image = imageView.image!
+    }
+    
+    func save(){
+        Meme.collection.append(self)
     }
     
     func generateImage(view: UIView) {
