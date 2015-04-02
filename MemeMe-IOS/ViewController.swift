@@ -37,8 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     @IBAction func shareMeme(sender: UIBarButtonItem) {
         let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, imageView: imageView)
         meme.generateImage(MemeEditorView)
-        
-        Meme.saveMeme()
+        meme.save()
         
         let activityViewController = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: [])
         self.presentViewController(activityViewController, animated: true, completion: nil)
