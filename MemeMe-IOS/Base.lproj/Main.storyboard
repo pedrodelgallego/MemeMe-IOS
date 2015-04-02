@@ -23,9 +23,17 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TAR-We-LWU"/>
-                                    <barButtonItem title="Camera" systemItem="camera" id="Rhj-Yo-8rn"/>
+                                    <barButtonItem title="Camera" systemItem="camera" id="Rhj-Yo-8rn">
+                                        <connections>
+                                            <action selector="takeAPicture:" destination="vXZ-lx-hvc" id="qzi-Gx-eLd"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Zwq-6x-fwy"/>
-                                    <barButtonItem title="Album" id="Bxt-Qr-xgN"/>
+                                    <barButtonItem title="Album" id="Bxt-Qr-xgN">
+                                        <connections>
+                                            <action selector="pickAPicture:" destination="vXZ-lx-hvc" id="TL0-1x-pIq"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7jb-N7-iYW"/>
                                 </items>
                                 <variation key="default">
@@ -42,11 +50,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWf-De-dkj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="67J-RF-KTL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="67J-RF-KTL">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="492"/>
-                                        </variation>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sW5-6g-Jmn">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -65,13 +70,17 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eKV-wR-Cj6" secondAttribute="trailing" constant="16" id="13R-c9-kT9"/>
+                                    <constraint firstItem="67J-RF-KTL" firstAttribute="top" secondItem="HWf-De-dkj" secondAttribute="top" id="3LZ-f9-yw6"/>
                                     <constraint firstAttribute="bottom" secondItem="eKV-wR-Cj6" secondAttribute="bottom" constant="20" id="4Yc-4o-nGI"/>
                                     <constraint firstItem="sW5-6g-Jmn" firstAttribute="leading" secondItem="HWf-De-dkj" secondAttribute="leading" constant="13" id="AGv-ny-d91"/>
                                     <constraint firstItem="sW5-6g-Jmn" firstAttribute="top" secondItem="HWf-De-dkj" secondAttribute="top" constant="20" id="FMN-HR-VaH"/>
+                                    <constraint firstAttribute="trailing" secondItem="67J-RF-KTL" secondAttribute="trailing" id="FkN-4g-kOZ"/>
                                     <constraint firstItem="67J-RF-KTL" firstAttribute="width" secondItem="HWf-De-dkj" secondAttribute="width" id="a3G-KS-OhB"/>
                                     <constraint firstItem="67J-RF-KTL" firstAttribute="height" secondItem="HWf-De-dkj" secondAttribute="height" id="fUf-Ej-Exk"/>
+                                    <constraint firstAttribute="bottom" secondItem="67J-RF-KTL" secondAttribute="bottom" id="ixr-bB-5Sd"/>
                                     <constraint firstAttribute="trailing" secondItem="sW5-6g-Jmn" secondAttribute="trailing" constant="13" id="jpH-ec-jrh"/>
                                     <constraint firstItem="eKV-wR-Cj6" firstAttribute="leading" secondItem="HWf-De-dkj" secondAttribute="leading" constant="13" id="nrl-tQ-Crp"/>
+                                    <constraint firstItem="67J-RF-KTL" firstAttribute="leading" secondItem="HWf-De-dkj" secondAttribute="leading" id="q2A-Xw-Ibd"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -80,8 +89,12 @@
                                         <exclude reference="eKV-wR-Cj6"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="3LZ-f9-yw6"/>
+                                        <exclude reference="FkN-4g-kOZ"/>
                                         <exclude reference="a3G-KS-OhB"/>
                                         <exclude reference="fUf-Ej-Exk"/>
+                                        <exclude reference="ixr-bB-5Sd"/>
+                                        <exclude reference="q2A-Xw-Ibd"/>
                                         <exclude reference="AGv-ny-d91"/>
                                         <exclude reference="FMN-HR-VaH"/>
                                         <exclude reference="jpH-ec-jrh"/>
@@ -97,8 +110,12 @@
                                         <include reference="eKV-wR-Cj6"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="3LZ-f9-yw6"/>
+                                        <include reference="FkN-4g-kOZ"/>
                                         <include reference="a3G-KS-OhB"/>
                                         <include reference="fUf-Ej-Exk"/>
+                                        <include reference="ixr-bB-5Sd"/>
+                                        <include reference="q2A-Xw-Ibd"/>
                                         <include reference="AGv-ny-d91"/>
                                         <include reference="FMN-HR-VaH"/>
                                         <include reference="jpH-ec-jrh"/>
@@ -151,9 +168,23 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Meme Me" id="hFo-fr-qN1">
-                        <barButtonItem key="leftBarButtonItem" title="Upload" id="avV-UY-bVl"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="crz-P0-wmV"/>
+                        <barButtonItem key="leftBarButtonItem" title="Share" id="avV-UY-bVl">
+                            <connections>
+                                <action selector="shareMeme:" destination="vXZ-lx-hvc" id="Xjh-aq-KJF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="crz-P0-wmV">
+                            <connections>
+                                <action selector="cancel:" destination="vXZ-lx-hvc" id="CpR-NA-8g9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="MemeEditorView" destination="HWf-De-dkj" id="3TL-8e-onf"/>
+                        <outlet property="bottomTextField" destination="eKV-wR-Cj6" id="Flk-Pv-SS3"/>
+                        <outlet property="imageView" destination="67J-RF-KTL" id="M9h-Ap-yAh"/>
+                        <outlet property="topTextField" destination="sW5-6g-Jmn" id="aH7-cc-5zC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,7 @@
 		D4C6D9841ACD95BE000F26D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C6D9831ACD95BE000F26D1 /* Images.xcassets */; };
 		D4C6D9871ACD95BE000F26D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C6D9851ACD95BE000F26D1 /* LaunchScreen.xib */; };
 		D4C6D9931ACD95BE000F26D1 /* MemeMe_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D9921ACD95BE000F26D1 /* MemeMe_IOSTests.swift */; };
+		D4C6D99F1ACDA1D1000F26D1 /* MemeEditorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D99E1ACDA1D1000F26D1 /* MemeEditorTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		D4C6D98C1ACD95BE000F26D1 /* MemeMe-IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MemeMe-IOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C6D9911ACD95BE000F26D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C6D9921ACD95BE000F26D1 /* MemeMe_IOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMe_IOSTests.swift; sourceTree = "<group>"; };
+		D4C6D99E1ACDA1D1000F26D1 /* MemeEditorTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		D4C6D96E1ACD95BE000F26D1 = {
 			isa = PBXGroup;
 			children = (
+				D4C6D99E1ACDA1D1000F26D1 /* MemeEditorTextField.swift */,
 				D4C6D9791ACD95BE000F26D1 /* MemeMe-IOS */,
 				D4C6D98F1ACD95BE000F26D1 /* MemeMe-IOSTests */,
 				D4C6D9781ACD95BE000F26D1 /* Products */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C6D99F1ACDA1D1000F26D1 /* MemeEditorTextField.swift in Sources */,
 				D4C6D97F1ACD95BE000F26D1 /* ViewController.swift in Sources */,
 				D4C6D97D1ACD95BE000F26D1 /* AppDelegate.swift in Sources */,
 			);
