@@ -11,7 +11,7 @@ import UIKit
 class Helpers {
     let testBundle = NSBundle(forClass: MemeModelTests.self)
 
-    func validTestUIImageView() -> UIImageView{
+    func validImageView() -> UIImageView{
         let image = UIImage(named: "T&Cs.jpg", inBundle: testBundle, compatibleWithTraitCollection: nil)
         
         return UIImageView(image: image)

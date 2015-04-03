@@ -11,10 +11,13 @@ import XCTest
 
 class MemeModelTests: XCTestCase {
     let helper = Helpers()
+    var meme: Meme!
+    
+    override func setUp() {
+        meme = Meme(topText: "hola", bottomText: "adios", imageView: helper.validImageView())
+    }
     
     func testCreateAMeme() {
-        let meme = Meme(topText: "hola", bottomText: "adios", imageView: helper.validTestUIImageView())
-        
         XCTAssertEqual(meme.topText, "hola", "it should initalize the topText property")
         
         XCTAssertEqual(meme.bottomText, "adios", "it should initalize the bottomText property")
@@ -25,11 +28,13 @@ class MemeModelTests: XCTestCase {
     }
     
     func testSaveAMeme(){
-        let meme = Meme(topText: "hola", bottomText: "adios", imageView: helper.validTestUIImageView())
-        
         meme.save()
-        
         XCTAssertEqual(Meme.collection.count, 1, "it should store the meme in the collection")
     }
     
+    func testGenerateImage(){
+        XCTAssertNil(meme.memedImage, "it should be empty")
+        meme.generateImage(helper.validImageView())
+        XCTAssertNotNil(meme.memedImage, "it should have a meme image")
+    }
 }
