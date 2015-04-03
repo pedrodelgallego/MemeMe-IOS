@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var MemeEditorView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -16,12 +16,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     @IBOutlet weak var bottomTextField: UITextField!
     
     let memeEditorTextField = MemeEditorTextField()
+    var imagePickerInteractor: ImagePickerInteractor!
     
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         memeEditorTextField.configTextField(topTextField, text: "TOP")
         memeEditorTextField.configTextField(bottomTextField, text: "BOTTOM")
+        imagePickerInteractor = ImagePickerInteractor(parentViewController: self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,20 +45,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
-    @IBAction func cancel(sender: UIBarButtonItem) { }
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        imageView.image = nil
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+    }
     
     @IBAction func pickAPicture(sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .PhotoLibrary
-        imagePicker.delegate = self
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        imagePickerInteractor.pickAPicture()
     }
 
     @IBAction func takeAPicture(sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
             imagePicker.sourceType = .Camera
-            imagePicker.delegate = self
+            imagePicker.delegate = imagePickerInteractor
             self.presentViewController(imagePicker, animated: true, completion: nil)
         } else {
             cameraNotAvailable()

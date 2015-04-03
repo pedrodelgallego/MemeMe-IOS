@@ -9,7 +9,7 @@
 import UIKit
 
 class SentMemeInteractor: NSObject, UITableViewDelegate, UICollectionViewDelegate {
-    var parentViewController: UIViewController
+    weak var parentViewController: UIViewController!
     
     init(parentViewController: UIViewController){
         self.parentViewController = parentViewController
