@@ -191,7 +191,7 @@
         <!--Item 2-->
         <scene sceneID="cR6-fZ-gaW">
             <objects>
-                <viewController id="YTT-vd-jxb" sceneMemberID="viewController">
+                <viewController id="YTT-vd-jxb" customClass="SentMemesCollectionViewController" customModule="MemeMe_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RzP-z7-Xrv"/>
                         <viewControllerLayoutGuide type="bottom" id="VeX-Li-FUm"/>
@@ -199,9 +199,62 @@
                     <view key="view" contentMode="scaleToFill" id="eDg-XJ-C7q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wKC-Xd-TEF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6l1-N9-oQA">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sentMemeItem" id="ZCr-Ow-eMD">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VeX-Li-FUm" firstAttribute="top" secondItem="wKC-Xd-TEF" secondAttribute="bottom" id="g0g-wn-dlc"/>
+                            <constraint firstAttribute="trailing" secondItem="wKC-Xd-TEF" secondAttribute="trailing" id="jEC-Sx-62t"/>
+                            <constraint firstItem="wKC-Xd-TEF" firstAttribute="leading" secondItem="eDg-XJ-C7q" secondAttribute="leading" id="mDc-dh-YP2"/>
+                            <constraint firstItem="wKC-Xd-TEF" firstAttribute="top" secondItem="RzP-z7-Xrv" secondAttribute="bottom" id="qeU-5U-aKD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wKC-Xd-TEF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="g0g-wn-dlc"/>
+                                <exclude reference="jEC-Sx-62t"/>
+                                <exclude reference="mDc-dh-YP2"/>
+                                <exclude reference="qeU-5U-aKD"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="wKC-Xd-TEF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="g0g-wn-dlc"/>
+                                <include reference="jEC-Sx-62t"/>
+                                <include reference="mDc-dh-YP2"/>
+                                <include reference="qeU-5U-aKD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="DAc-Zt-mud"/>
+                    <connections>
+                        <outlet property="collectionView" destination="wKC-Xd-TEF" id="ckw-EJ-4Rk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rat-pX-a62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

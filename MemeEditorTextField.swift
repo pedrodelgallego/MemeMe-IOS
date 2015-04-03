@@ -20,8 +20,8 @@ class MemeEditorTextField: NSObject, UITextFieldDelegate {
     }
     
     let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.whiteColor(),
-        NSForegroundColorAttributeName: UIColor.redColor(),
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 38)!,
         NSStrokeWidthAttributeName : 3.0
     ]
