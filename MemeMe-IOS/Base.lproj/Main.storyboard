@@ -197,6 +197,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VeX-Li-FUm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eDg-XJ-C7q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -215,6 +216,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ho5-d3-7wx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dLa-SS-sdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="99K-hT-9gq">
@@ -243,10 +245,10 @@
                                 <exclude reference="99K-hT-9gq"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="B97-UX-uO5"/>
                                 <exclude reference="6z4-Jq-YIT"/>
                                 <exclude reference="8NW-8Q-Exv"/>
                                 <exclude reference="DuM-3w-c17"/>
-                                <exclude reference="B97-UX-uO5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -254,10 +256,10 @@
                                 <include reference="99K-hT-9gq"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="B97-UX-uO5"/>
                                 <include reference="6z4-Jq-YIT"/>
                                 <include reference="8NW-8Q-Exv"/>
                                 <include reference="DuM-3w-c17"/>
-                                <include reference="B97-UX-uO5"/>
                             </mask>
                         </variation>
                     </view>
@@ -280,6 +282,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZJD-sm-2oo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TaS-td-tDq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JT8-HB-AfY">

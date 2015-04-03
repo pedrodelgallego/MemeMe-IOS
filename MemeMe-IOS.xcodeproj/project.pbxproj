@@ -71,6 +71,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4008CB21ACEC0A0009CC403 /* Meme */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6D9A01ACDA4C1000F26D1 /* Meme.swift */,
+				D4008CA71ACEAAF7009CC403 /* MemeViewController.swift */,
+			);
+			name = Meme;
+			sourceTree = "<group>";
+		};
+		D4008CB31ACEC0A6009CC403 /* Sent Memes */ = {
+			isa = PBXGroup;
+			children = (
+				D4008C9F1ACE9F4A009CC403 /* SentMemesTableView.swift */,
+				D4008CA11ACEA076009CC403 /* MemeDataSource.swift */,
+				D4008CA31ACEA236009CC403 /* SentMemeInteractor.swift */,
+			);
+			name = "Sent Memes";
+			sourceTree = "<group>";
+		};
+		D4008CB41ACEC0AE009CC403 /* Meme Editor */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6D99E1ACDA1D1000F26D1 /* MemeEditorTextField.swift */,
+				D4C6D97E1ACD95BE000F26D1 /* ViewController.swift */,
+			);
+			name = "Meme Editor";
+			sourceTree = "<group>";
+		};
 		D4C6D96E1ACD95BE000F26D1 = {
 			isa = PBXGroup;
 			children = (
@@ -92,15 +120,11 @@
 		D4C6D9791ACD95BE000F26D1 /* MemeMe-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				D4008CB41ACEC0AE009CC403 /* Meme Editor */,
+				D4008CB31ACEC0A6009CC403 /* Sent Memes */,
+				D4008CB21ACEC0A0009CC403 /* Meme */,
 				D4C6D97C1ACD95BE000F26D1 /* AppDelegate.swift */,
-				D4C6D99E1ACDA1D1000F26D1 /* MemeEditorTextField.swift */,
-				D4C6D9A01ACDA4C1000F26D1 /* Meme.swift */,
-				D4C6D97E1ACD95BE000F26D1 /* ViewController.swift */,
 				D4C6D9801ACD95BE000F26D1 /* Main.storyboard */,
-				D4008CA71ACEAAF7009CC403 /* MemeViewController.swift */,
-				D4008CA11ACEA076009CC403 /* MemeDataSource.swift */,
-				D4008C9F1ACE9F4A009CC403 /* SentMemesTableView.swift */,
-				D4008CA31ACEA236009CC403 /* SentMemeInteractor.swift */,
 				D4C6D9831ACD95BE000F26D1 /* Images.xcassets */,
 				D4C6D9851ACD95BE000F26D1 /* LaunchScreen.xib */,
 				D4C6D97A1ACD95BE000F26D1 /* Supporting Files */,
