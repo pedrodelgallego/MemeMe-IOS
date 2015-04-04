@@ -22,16 +22,7 @@ class MemeModelTests: XCTestCase {
         
         XCTAssertEqual(meme.bottomText, "adios", "it should initalize the bottomText property")
     }
-    
-    func testMemeCollectionIsEmpty(){
-        XCTAssertEqual(Meme.collection.count, 0, "it should store the meme in the collection")
-    }
-    
-    func testSaveAMeme(){
-        meme.save()
-        XCTAssertEqual(Meme.collection.count, 1, "it should store the meme in the collection")
-    }
-    
+        
     func testGenerateImage(){
         XCTAssertNil(meme.memedImage, "it should be empty")
         meme.generateImage(helper.validImageView())

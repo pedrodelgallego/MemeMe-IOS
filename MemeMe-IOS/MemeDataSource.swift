@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class MemeDataSource: NSObject, UITableViewDataSource, UICollectionViewDataSource {
-    
+    let memeDataStorage = MemeDataStorage()
     // Mark: Reusable methods
     
     func numberOfItemsInCollection() -> Int{
-        return Meme.collection.count
+        return memeDataStorage.all().count
     }
     
     // MARK: UITableViewDataSource
@@ -24,7 +24,7 @@ class MemeDataSource: NSObject, UITableViewDataSource, UICollectionViewDataSourc
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = Meme.collection[indexPath.row].topText
+        cell.textLabel?.text = memeDataStorage.getElementAt(indexPath.row).topText
         return cell
     }
     
@@ -34,11 +34,10 @@ class MemeDataSource: NSObject, UITableViewDataSource, UICollectionViewDataSourc
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("sentMemeItem", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("sentMemeItem", forIndexPath: indexPath) as! MemeCollectionViewCell
         
-        let meme = Meme.collection[indexPath.item]
-        let imageView = UIImageView(image: meme.image)
-        cell.backgroundView = imageView
+        let meme = memeDataStorage.getElementAt(indexPath.item)
+        cell.configCellUIElements(meme)
         
         return cell
     }

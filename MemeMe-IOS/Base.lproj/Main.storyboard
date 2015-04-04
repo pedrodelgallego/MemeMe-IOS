@@ -187,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1488" y="332"/>
         </scene>
-        <!--Item 2-->
+        <!--Collection-->
         <scene sceneID="cR6-fZ-gaW">
             <objects>
                 <viewController id="YTT-vd-jxb" customClass="SentMemesCollectionViewController" customModule="MemeMe_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -209,14 +209,67 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sentMemeItem" id="ZCr-Ow-eMD">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sentMemeItem" id="ZCr-Ow-eMD" customClass="MemeCollectionViewCell" customModule="MemeMe_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adios" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXV-Bw-Jyi">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <rect key="frame" x="53" y="0.0" width="44" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a24-e2-aCJ">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="57" y="129" width="36" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="PXV-Bw-Jyi" secondAttribute="centerX" id="Bn3-6D-hAa"/>
+                                            <constraint firstAttribute="centerY" secondItem="PXV-Bw-Jyi" secondAttribute="centerY" constant="64.5" id="l0P-0Q-oCj"/>
+                                            <constraint firstAttribute="centerY" secondItem="a24-e2-aCJ" secondAttribute="centerY" constant="-64.5" id="sBu-92-ydL"/>
+                                        </constraints>
+                                        <size key="customSize" width="50" height="50"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="PXV-Bw-Jyi"/>
+                                                <exclude reference="a24-e2-aCJ"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="Bn3-6D-hAa"/>
+                                                <exclude reference="l0P-0Q-oCj"/>
+                                                <exclude reference="sBu-92-ydL"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="PXV-Bw-Jyi"/>
+                                                <include reference="a24-e2-aCJ"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <include reference="Bn3-6D-hAa"/>
+                                                <include reference="l0P-0Q-oCj"/>
+                                                <include reference="sBu-92-ydL"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="bottomTextLabel" destination="a24-e2-aCJ" id="Fz9-fY-qRP"/>
+                                            <outlet property="topTextLabel" destination="PXV-Bw-Jyi" id="Io3-0Y-FVY"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -251,7 +304,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="DAc-Zt-mud"/>
+                    <tabBarItem key="tabBarItem" title="Collection" id="DAc-Zt-mud"/>
                     <connections>
                         <outlet property="collectionView" destination="wKC-Xd-TEF" id="ckw-EJ-4Rk"/>
                     </connections>
@@ -260,7 +313,7 @@
             </objects>
             <point key="canvasLocation" x="3237" y="670"/>
         </scene>
-        <!--Item 1-->
+        <!--table-->
         <scene sceneID="ISf-25-utk">
             <objects>
                 <viewController id="Ddj-qJ-wm8" customClass="sentMemesViewController" customModule="MemeMe_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -316,7 +369,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="YKZ-Sw-WPM"/>
+                    <tabBarItem key="tabBarItem" title="table" id="YKZ-Sw-WPM"/>
                     <connections>
                         <outlet property="tableView" destination="99K-hT-9gq" id="HON-XH-gG7"/>
                         <segue destination="Spb-14-JIu" kind="show" identifier="showSentMeme" id="wsh-8a-j4L"/>
@@ -355,8 +408,8 @@
                                 <exclude reference="JT8-HB-AfY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="u9u-jC-F07"/>
                                 <exclude reference="zbt-Yf-wfc"/>
+                                <exclude reference="u9u-jC-F07"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -364,8 +417,8 @@
                                 <include reference="JT8-HB-AfY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="u9u-jC-F07"/>
                                 <include reference="zbt-Yf-wfc"/>
+                                <include reference="u9u-jC-F07"/>
                             </mask>
                         </variation>
                     </view>

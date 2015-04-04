@@ -10,14 +10,14 @@ import UIKit
 
 class SentMemesCollectionViewController: UIViewController {
     let dataSource = MemeDataSource()
-    var interactor: SentMemeInteractor!
+    var interactor: SentMemePresenter!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         collectionView.dataSource = dataSource
         
-        interactor = SentMemeInteractor(parentViewController: self)
+        interactor = SentMemePresenter(view: self)
         collectionView.delegate = interactor
     }
 }

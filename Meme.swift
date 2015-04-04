@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-class Meme {
-    static var collection = [Meme]()
-    
+class Meme {    
     var topText: String
     var bottomText: String
     var image: UIImage
@@ -22,11 +20,7 @@ class Meme {
         self.bottomText = bottomText
         self.image = imageView.image!
     }
-    
-    func save(){
-        Meme.collection.append(self)
-    }
-    
+        
     func generateImage(view: UIView) {
         UIGraphicsBeginImageContext(view.bounds.size)
         view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
