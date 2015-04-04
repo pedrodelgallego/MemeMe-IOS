@@ -16,7 +16,7 @@ class MemeDataStorage: NSObject {
         MemeDataStorage.collection.append(meme)
     }
     
-    func removeAllMemes(){
+    func removeAll(){
         MemeDataStorage.collection = [Meme]()
     }
 }

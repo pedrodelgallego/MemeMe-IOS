@@ -33,10 +33,20 @@ class MemeDataStorageTests: XCTestCase {
         memeDS.saveMeme(anotherMeme)
 
         var returnedMeme = memeDS.getElementAt(1)
-        XCTAssertEqual(returnedMeme.bottomText, "1", "It should be the second meme")
+        XCTAssertEqual(returnedMeme.bottomText, anotherMeme.bottomText, "It should be the second meme")
     }
+    
+    func testRemoveAll(){
+        memeDS.saveMeme(meme)
+        memeDS.saveMeme(Meme(topText: "1", bottomText: "1", imageView: helper.validImageView()))
+        XCTAssertEqual(memeDS.all().count, 2, "it should store the meme in the collection")
+        
+        memeDS.removeAll()
+        XCTAssertEqual(memeDS.all().count, 0, "it should store the meme in the collection")
+    }
+    
 
     override func tearDown() {
-        memeDS.removeAllMemes()
+        memeDS.removeAll()
     }
 }
