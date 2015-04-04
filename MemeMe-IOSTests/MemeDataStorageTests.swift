@@ -9,20 +9,34 @@
 import XCTest
 
 class MemeDataStorageTests: XCTestCase {
-    let memeDataStorage = MemeDataStorage()
+    let memeDS = MemeDataStorage()
     let helper = Helpers()
     var meme: Meme!
     
     override func setUp() {
-        meme = Meme(topText: "hola", bottomText: "adios", imageView: helper.validImageView())
+        meme = Meme(topText: "0", bottomText: "0", imageView: helper.validImageView())
     }
     
     func testMemeCollectionIsEmpty(){
-        XCTAssertEqual(memeDataStorage.all().count, 0, "it should store the meme in the collection")
+        XCTAssertEqual(memeDS.all().count, 0, "it should store the meme in the collection")
     }
     
     func testSaveAMeme(){
-        memeDataStorage.saveMeme(meme)
-        XCTAssertEqual(memeDataStorage.all().count, 1, "it should store the meme in the collection")
+        memeDS.saveMeme(meme)
+        XCTAssertEqual(memeDS.all().count, 1, "it should store the meme in the collection")
+    }
+    
+    func testGetElementAt(){
+        let anotherMeme = Meme(topText: "1", bottomText: "1", imageView: helper.validImageView())
+        
+        memeDS.saveMeme(meme)
+        memeDS.saveMeme(anotherMeme)
+
+        var returnedMeme = memeDS.getElementAt(1)
+        XCTAssertEqual(returnedMeme.bottomText, "1", "It should be the second meme")
+    }
+
+    override func tearDown() {
+        memeDS.removeAllMemes()
     }
 }
