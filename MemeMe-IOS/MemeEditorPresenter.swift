@@ -3,7 +3,7 @@ import UIKit
 class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     weak var view: MemeEditorViewController!
     let navigator: MemeEditorNavigator!
-    let memeDataStorage = MemeDataStorage()
+    let interactor = MemeEditorInteractor()
     
     init(view: MemeEditorViewController){
         self.view = view
@@ -12,10 +12,7 @@ class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigati
     
     // MARK: Share Meme
     func shareMeme() {
-        let meme = Meme(topText: view.topTextField.text, bottomText: view.bottomTextField.text, imageView: view.imageView)
-        meme.generateImage(view.MemeEditorView)
-        memeDataStorage.saveMeme(meme)
-        
+        let meme = interactor.saveMeme(view)
         navigator.presentActivity(meme)
     }
     
