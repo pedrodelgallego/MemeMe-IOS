@@ -303,7 +303,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Collection" id="DAc-Zt-mud"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="collection" id="DAc-Zt-mud"/>
                     <connections>
                         <outlet property="collectionView" destination="wKC-Xd-TEF" id="ckw-EJ-4Rk"/>
                     </connections>
@@ -368,7 +368,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="table" id="YKZ-Sw-WPM"/>
+                    <tabBarItem key="tabBarItem" title="table" image="table" id="YKZ-Sw-WPM"/>
                     <connections>
                         <outlet property="tableView" destination="99K-hT-9gq" id="HON-XH-gG7"/>
                         <segue destination="Spb-14-JIu" kind="show" identifier="showSentMeme" id="wsh-8a-j4L"/>
@@ -467,4 +467,8 @@
             <point key="canvasLocation" x="682.5" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>
