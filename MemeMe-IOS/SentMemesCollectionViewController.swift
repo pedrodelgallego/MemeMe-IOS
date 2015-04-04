@@ -9,13 +9,12 @@
 import UIKit
 
 class SentMemesCollectionViewController: UIViewController {
-    let dataSource = MemeDataSource()
-    var presenter: SentMemePresenter!
+    var presenter: SentMemeAsCollectionPresenter!
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
-        presenter = SentMemePresenter(view: self)
+        presenter = SentMemeAsCollectionPresenter(view: self)
         collectionView.delegate = presenter
         collectionView.dataSource = presenter
     }

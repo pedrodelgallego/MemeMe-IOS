@@ -1,13 +1,12 @@
 import UIKit
 
 class sentMemesViewController: UIViewController {
-    let dataSource = MemeDataSource()
-    var presenter: SentMemePresenter!
+    var presenter: SentMemeAsTablePresenter!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        presenter = SentMemePresenter(view: self)
+        presenter = SentMemeAsTablePresenter(view: self)
         tableView.dataSource = presenter
         tableView.delegate = presenter
     }
