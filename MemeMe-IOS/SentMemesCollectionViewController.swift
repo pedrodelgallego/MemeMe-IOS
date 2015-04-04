@@ -15,9 +15,8 @@ class SentMemesCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
-        collectionView.dataSource = dataSource
-        
         presenter = SentMemePresenter(view: self)
         collectionView.delegate = presenter
+        collectionView.dataSource = presenter
     }
 }

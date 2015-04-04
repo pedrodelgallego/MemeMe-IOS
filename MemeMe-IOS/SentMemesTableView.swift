@@ -7,9 +7,8 @@ class sentMemesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        tableView.dataSource = dataSource
-        
         presenter = SentMemePresenter(view: self)
+        tableView.dataSource = presenter
         tableView.delegate = presenter
     }
 }
