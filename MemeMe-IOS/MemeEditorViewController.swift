@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  MemeMe-IOS
-//
-//  Created by Pedro Del Gallego on 02/04/15.
-//  Copyright (c) 2015 Pedro Del Gallego. All rights reserved.
-//
-
 import UIKit
 
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -17,6 +9,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     let memeEditorTextField = MemeEditorTextField()
     var imagePickerInteractor: ImagePickerInteractor!
+    var shareMemeInteractor: ShareMemeInteractor!
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -24,6 +17,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         memeEditorTextField.configTextField(topTextField, text: "TOP")
         memeEditorTextField.configTextField(bottomTextField, text: "BOTTOM")
         imagePickerInteractor = ImagePickerInteractor(parentViewController: self)
+        shareMemeInteractor = ShareMemeInteractor(parentViewController: self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -41,14 +35,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         meme.generateImage(MemeEditorView)
         meme.save()
         
-        let activityViewController = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: [])
-        self.presentViewController(activityViewController, animated: true, completion: nil)
-    }
-    
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        imageView.image = nil
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        shareMemeInteractor.shareMeme(meme)
     }
     
     @IBAction func pickAPicture(sender: UIBarButtonItem) {
@@ -56,33 +43,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     @IBAction func takeAPicture(sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
-            imagePicker.sourceType = .Camera
-            imagePicker.delegate = imagePickerInteractor
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-        } else {
-            cameraNotAvailable()
-        }
-    }
-    
-    func cameraNotAvailable(){
-        var alert = UIAlertController(title: "Camera is not available", message: "The camera is not available while using the simulator, please deploy de application in your device", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-        self.presentViewController(alert, animated: true){ }
-    }
-    
-    // MARK: Image picker delegate
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imageView.image = image
-        }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        imagePickerInteractor.takeAPicture()
     }
     
     // MARK: Notification Observers
@@ -111,7 +72,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.CGRectValue().height
     }
 }

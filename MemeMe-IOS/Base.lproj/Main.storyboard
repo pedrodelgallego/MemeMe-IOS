@@ -172,7 +172,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="crz-P0-wmV">
                             <connections>
-                                <action selector="cancel:" destination="vXZ-lx-hvc" id="CpR-NA-8g9"/>
                                 <segue destination="qgu-F9-NYs" kind="show" id="MgC-32-6Gz"/>
                             </connections>
                         </barButtonItem>
@@ -202,6 +201,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wKC-Xd-TEF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6l1-N9-oQA">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -338,22 +338,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JT8-HB-AfY">
+                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JT8-HB-AfY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="90" width="400" height="382"/>
                                 </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JT8-HB-AfY" firstAttribute="top" secondItem="21h-5C-GBK" secondAttribute="bottom" id="u9u-jC-F07"/>
+                            <constraint firstItem="ZJD-sm-2oo" firstAttribute="top" secondItem="JT8-HB-AfY" secondAttribute="bottom" id="zbt-Yf-wfc"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="JT8-HB-AfY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="u9u-jC-F07"/>
+                                <exclude reference="zbt-Yf-wfc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="JT8-HB-AfY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="u9u-jC-F07"/>
+                                <include reference="zbt-Yf-wfc"/>
                             </mask>
                         </variation>
                     </view>

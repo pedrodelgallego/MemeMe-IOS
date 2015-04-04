@@ -1,13 +1,16 @@
 import UIKit
 
 class ImagePickerInteractor: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     weak var parentViewController: MemeEditorViewController!
+    let imagePicker = UIImagePickerController()
     
     init(parentViewController: MemeEditorViewController){
+        super.init()
         self.parentViewController = parentViewController
+        imagePicker.delegate = self
     }
     
+    // MARK: Delegate methods
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         parentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -19,12 +22,30 @@ class ImagePickerInteractor: NSObject, UIImagePickerControllerDelegate, UINaviga
         parentViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: User Interactions
     func pickAPicture(){
-        let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .PhotoLibrary
-        imagePicker.delegate = self
-        parentViewController.presentViewController(imagePicker, animated: true, completion: nil)
+        showViewImagePickerController()
     }
     
+    func takeAPicture() {
+        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
+            imagePicker.sourceType = .Camera
+            showViewImagePickerController()
+        } else {
+            cameraNotAvailable()
+        }
+    }
+    
+    func cameraNotAvailable(){
+        var alert = UIAlertController(title: "Camera is not available", message: "The camera is not available while using the simulator, please deploy de application in your device", preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+        parentViewController.presentViewController(alert, animated: true){ }
+    }
+    
+    func showViewImagePickerController(){
+        parentViewController.presentViewController(imagePicker, animated: true, completion: nil)
+    }
 }
 
