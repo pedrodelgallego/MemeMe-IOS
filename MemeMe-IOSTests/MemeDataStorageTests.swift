@@ -14,7 +14,7 @@ class MemeDataStorageTests: XCTestCase {
     var meme: Meme!
     
     override func setUp() {
-        meme = Meme(topText: "0", bottomText: "0", imageView: helper.validImageView())
+        meme = Fixture.validMeme(bottomText: "0")
     }
     
     func testMemeCollectionIsEmpty(){
@@ -27,7 +27,7 @@ class MemeDataStorageTests: XCTestCase {
     }
     
     func testGetElementAt(){
-        let anotherMeme = Meme(topText: "1", bottomText: "1", imageView: helper.validImageView())
+        let anotherMeme = Fixture.validMeme(bottomText: "1")
         
         memeDS.saveMeme(meme)
         memeDS.saveMeme(anotherMeme)
@@ -38,14 +38,13 @@ class MemeDataStorageTests: XCTestCase {
     
     func testRemoveAll(){
         memeDS.saveMeme(meme)
-        memeDS.saveMeme(Meme(topText: "1", bottomText: "1", imageView: helper.validImageView()))
+        memeDS.saveMeme(Fixture.validMeme())
         XCTAssertEqual(memeDS.all().count, 2, "it should store the meme in the collection")
         
         memeDS.removeAll()
         XCTAssertEqual(memeDS.all().count, 0, "it should store the meme in the collection")
     }
     
-
     override func tearDown() {
         memeDS.removeAll()
     }
