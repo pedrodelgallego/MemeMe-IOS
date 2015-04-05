@@ -10,12 +10,12 @@ class MemeEditorTextField: NSObject, UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
-    
     let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.whiteColor(),
-        NSForegroundColorAttributeName: UIColor.blackColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 38)!,
-        NSStrokeWidthAttributeName : 3.0
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName : UIColor.whiteColor(),
+        // default fontsize 40; with shrink to fit to minimum 26
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName : -3.0
     ]
     
     func configTextField(textField: UITextField, text: String){

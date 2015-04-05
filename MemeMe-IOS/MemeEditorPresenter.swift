@@ -5,6 +5,7 @@ class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigati
     var navigator: MemeEditorNavigator!
     var interactor = MemeEditorInteractor()
     
+    
     init(view: MemeEditorViewController){
         self.view = view
         self.navigator = MemeEditorNavigator(view: view)
