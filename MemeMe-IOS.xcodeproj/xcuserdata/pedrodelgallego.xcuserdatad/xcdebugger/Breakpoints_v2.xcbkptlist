@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe-IOS/MemeViewController.swift"
-            timestampString = "449754069.004717"
+            timestampString = "449948385.424943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe-IOS/SentMemesCollectionViewController.swift"
-            timestampString = "449852931.035441"
+            timestampString = "449948385.424943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24">
+            startingLineNumber = "16"
+            endingLineNumber = "16">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -134,11 +134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe-IOS/SentMemesNavigator.swift"
-            timestampString = "449834981.482817"
+            timestampString = "449948385.424943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
             landmarkName = "SentMemesNavigator"
             landmarkType = "3">
          </BreakpointContent>
@@ -150,11 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe-IOS/MemeCollectionViewCell.swift"
-            timestampString = "449838284.202732"
+            timestampString = "449948385.424943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
             landmarkName = "MemeCollectionViewCell"
             landmarkType = "3">
          </BreakpointContent>

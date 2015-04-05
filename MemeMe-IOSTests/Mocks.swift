@@ -22,6 +22,4 @@ class MemeEditorInteractorMock: MemeEditorInteractor {
         saveMemeWasCalled = true
         return Fixture.validMeme()
     }
-    
-    
 }

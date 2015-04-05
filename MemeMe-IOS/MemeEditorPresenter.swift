@@ -24,6 +24,7 @@ class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             view.imageView.image = image
+            view.actionButton.enabled = true
         }
         view.dismissViewControllerAnimated(true, completion: nil)
     }
