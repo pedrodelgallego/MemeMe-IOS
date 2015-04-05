@@ -2,8 +2,8 @@ import UIKit
 
 class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     weak var view: MemeEditorViewController!
-    let navigator: MemeEditorNavigator!
-    let interactor = MemeEditorInteractor()
+    var navigator: MemeEditorNavigator!
+    var interactor = MemeEditorInteractor()
     
     init(view: MemeEditorViewController){
         self.view = view

@@ -16,4 +16,9 @@ class Helpers {
         
         return UIImageView(image: image)
     }
+    
+    func aValidMeme() -> Meme {
+        return Meme(topText: "hola", bottomText: "adios", imageView: self.validImageView())
+    }
 }
+
