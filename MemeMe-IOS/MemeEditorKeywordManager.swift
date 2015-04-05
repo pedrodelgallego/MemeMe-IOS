@@ -1,7 +1,7 @@
 import UIKit
 
-class MemeEditorKeywordManager {
-    var view: MemeEditorViewController?
+class MemeEditorKeywordManager: NSObject {
+    var view: MemeEditorViewController!
     
     init(view: MemeEditorViewController){
         self.view = view
@@ -22,17 +22,29 @@ class MemeEditorKeywordManager {
             UIKeyboardWillHideNotification, object: nil)
     }
     
+    
     func keyboardWillHide(notification: NSNotification) {
-        view?.view.frame.origin.y += getKeyboardHeight(notification)
+        if view.shouldKeyboardMove {
+            let offset = getKeyboardHeight(notification)
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                view?.view.frame.origin.y += offset
+            })
+        }
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        view?.view.frame.origin.y -= getKeyboardHeight(notification)
+        if view.shouldKeyboardMove {
+            let offset = getKeyboardHeight(notification)
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                view?.view.frame.origin.y -= offset
+            })
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        
         return keyboardSize.CGRectValue().height
     }
 }

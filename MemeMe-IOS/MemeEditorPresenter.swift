@@ -7,7 +7,6 @@ class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigati
     var navigator: MemeEditorNavigator
     var interactor = MemeEditorInteractor()
     
-    
     init(view: MemeEditorViewController){
         self.view = view
         navigator = MemeEditorNavigator(view: view)
@@ -54,55 +53,11 @@ class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigati
     }
     
     // MARK: Notification Observers
-//    func subscribeToKeyboardNotifications() {
-//        keyboardManager.subscribeToKeyboardNotifications()
-//    }
-//    
-//    func unsubscribeFromKeyboardNotifications() {
-//        keyboardManager.unsubscribeFromKeyboardNotifications()
-//    }
-
-    // MARK: Notification Observers
-    func subscribeToKeyboardNotifications(){
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-    
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hola:", name: UITextFieldTextDidBeginEditingNotification, object: view.topTextField)
+    func subscribeToKeyboardNotifications() {
+        keyboardManager.subscribeToKeyboardNotifications()
     }
     
     func unsubscribeFromKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name:
-            UIKeyboardWillShowNotification, object: nil)
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self, name:
-            UIKeyboardWillHideNotification, object: nil)
+        keyboardManager.unsubscribeFromKeyboardNotifications()
     }
-    
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if view.shouldKeyboardMove {
-            let offset = getKeyboardHeight(notification)
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                view?.view.frame.origin.y += offset
-            })
-        }
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        if view.shouldKeyboardMove {
-            let offset = getKeyboardHeight(notification)
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                view?.view.frame.origin.y -= offset
-            })
-        }
-    }
-    
-    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-       
-        return keyboardSize.CGRectValue().height
-    }
-
 }
