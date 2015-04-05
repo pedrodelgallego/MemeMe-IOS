@@ -21,12 +21,11 @@ class SelectImageForMeme: XCTestCase {
     
     func testSelectAnImageFromThePhotoLibrary(){
         presenter.pickAPicture()
-        XCTAssertEqual((presenter.navigator as! MemeEditorNavigatorMock).imagePickerWasCalledWithSourceType, UIImagePickerControllerSourceType.PhotoLibrary, "it should user the photo library")
+        XCTAssertEqual((presenter.navigator as! MemeEditorNavigatorMock).imagePickerWasCalledWithSourceType, UIImagePickerControllerSourceType.PhotoLibrary, "it should use the photo library")
     }
     
 //    func testTakeAPicture(){
 //        presenter.takeAPicture()
-//        XCTAssertEqual((presenter.navigator as! MemeEditorNavigatorMock).imagePickerWasCalledWithSourceType, UIImagePickerControllerSourceType.PhotoLibrary, "it should user the photo library")
+//        XCTAssertEqual((presenter.navigator as! MemeEditorNavigatorMock).imagePickerWasCalledWithSourceType, UIImagePickerControllerSourceType.Camera, "it should use the camera")
 //    }
-
 }
