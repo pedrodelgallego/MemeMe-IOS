@@ -4,21 +4,21 @@ class MemeEditorViewController: UIViewController {
 
     @IBOutlet weak var MemeEditorView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var topTextField: UITextField!
-    @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var actionButton: UIBarButtonItem!
     
+    @IBOutlet weak var topTextField: MemeEditorTextField!
+    @IBOutlet weak var bottomTextField: MemeEditorTextField!
     
-    let memeEditorTextField = MemeEditorTextField()
+    // let memeEditorTextField = MemeEditorTextField()
     var presenter: MemeEditorPresenter!
+    var shouldKeyboardMove = false
     
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         actionButton.enabled = false
-        memeEditorTextField.configTextField(topTextField, text: "TOP")
-        memeEditorTextField.configTextField(bottomTextField, text: "BOTTOM")
+        topTextField.configTextField("TOP", view: self, shouldKeyboardMove: false)
+        bottomTextField.configTextField("BOTTOM", view: self)
         presenter = MemeEditorPresenter(view: self)
     }
     

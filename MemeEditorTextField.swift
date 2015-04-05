@@ -1,28 +1,38 @@
 import Foundation
 import UIKit
 
-class MemeEditorTextField: NSObject, UITextFieldDelegate {
+class MemeEditorTextField: UITextField, UITextFieldDelegate {
+    var view: MemeEditorViewController!
+    var shouldKeyboardMove = false
+    
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 32)!,
+        NSStrokeWidthAttributeName : -3.0
+    ]
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.clearColor()
+        self.defaultTextAttributes = memeTextAttributes
+        self.clearsOnBeginEditing = true
+        self.delegate = self
+        self.textAlignment = .Center
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.text = ""
+        view.shouldKeyboardMove = self.shouldKeyboardMove
     }
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.blackColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
-        // default fontsize 40; with shrink to fit to minimum 26
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : -3.0
-    ]
-    
-    func configTextField(textField: UITextField, text: String){
-        textField.delegate = self
-        textField.backgroundColor = UIColor.clearColor()
-        textField.defaultTextAttributes = memeTextAttributes
-        textField.textAlignment = .Center
-        textField.text = text
+
+    func configTextField(text: String, view: MemeEditorViewController, shouldKeyboardMove: Bool = true){
+        self.view = view
+        self.shouldKeyboardMove = shouldKeyboardMove
+        self.text = text
     }
 }
