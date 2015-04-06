@@ -43,5 +43,15 @@ class MemeEditorViewController: UIViewController {
     @IBAction func takeAPicture(sender: UIBarButtonItem) {
         presenter.takeAPicture()
     }
+    
+    // Mark: Abstract the view structure
+    
+    func slideDown(offset: CGFloat) {
+        UIView.animateWithDuration(0.1) { self.view.frame.origin.y += offset }
+    }
+    
+    func slideUp(offset: CGFloat){
+        UIView.animateWithDuration(0.1) { self.view.frame.origin.y -= offset }
+    }
 }
 

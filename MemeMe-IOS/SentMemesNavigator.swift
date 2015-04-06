@@ -13,5 +13,4 @@ class SentMemesNavigator {
         vc.meme = meme
         self.view.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }

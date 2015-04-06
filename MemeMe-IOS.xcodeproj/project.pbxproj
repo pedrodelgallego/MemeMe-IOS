@@ -234,8 +234,8 @@
 				D4008CB21ACEC0A0009CC403 /* Meme */,
 				D4C6D97C1ACD95BE000F26D1 /* AppDelegate.swift */,
 				D4C6D9801ACD95BE000F26D1 /* Main.storyboard */,
-				D4C6D9831ACD95BE000F26D1 /* Images.xcassets */,
 				D4C6D9851ACD95BE000F26D1 /* LaunchScreen.xib */,
+				D4C6D9831ACD95BE000F26D1 /* Images.xcassets */,
 				D4C6D97A1ACD95BE000F26D1 /* Supporting Files */,
 			);
 			path = "MemeMe-IOS";

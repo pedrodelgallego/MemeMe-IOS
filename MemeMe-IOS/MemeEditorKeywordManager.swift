@@ -26,18 +26,14 @@ class MemeEditorKeywordManager: NSObject {
     func keyboardWillHide(notification: NSNotification) {
         if view.shouldKeyboardMove {
             let offset = getKeyboardHeight(notification)
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                view?.view.frame.origin.y += offset
-            })
+            view.slideDown(offset)
         }
     }
     
     func keyboardWillShow(notification: NSNotification) {
         if view.shouldKeyboardMove {
             let offset = getKeyboardHeight(notification)
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                view?.view.frame.origin.y -= offset
-            })
+            view.slideUp(offset)
         }
     }
     

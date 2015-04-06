@@ -313,7 +313,7 @@
             </objects>
             <point key="canvasLocation" x="3237" y="670"/>
         </scene>
-        <!--table-->
+        <!--Title-->
         <scene sceneID="ISf-25-utk">
             <objects>
                 <viewController id="Ddj-qJ-wm8" customClass="sentMemesViewController" customModule="MemeMe_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -370,6 +370,9 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="table" image="table" id="YKZ-Sw-WPM"/>
+                    <navigationItem key="navigationItem" title="Title" id="6VT-t0-AGe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FPn-mn-vQW"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="99K-hT-9gq" id="HON-XH-gG7"/>
                         <segue destination="Spb-14-JIu" kind="show" identifier="showSentMeme" id="wsh-8a-j4L"/>
@@ -401,7 +404,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JT8-HB-AfY" firstAttribute="top" secondItem="21h-5C-GBK" secondAttribute="bottom" id="u9u-jC-F07"/>
-                            <constraint firstItem="ZJD-sm-2oo" firstAttribute="top" secondItem="JT8-HB-AfY" secondAttribute="bottom" id="zbt-Yf-wfc"/>
+                            <constraint firstItem="ZJD-sm-2oo" firstAttribute="top" secondItem="JT8-HB-AfY" secondAttribute="bottom" id="zbt-Yf-wfc">
+                                <variation key="widthClass=compact" constant="-20"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -422,6 +427,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="JT8-HB-AfY" id="8RC-FT-cYY"/>
                     </connections>
