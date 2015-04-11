@@ -1,6 +1,6 @@
 import UIKit
 
-class sentMemesViewController: UIViewController {
+class SentMemesViewController: UIViewController {
     var presenter: SentMemeAsTablePresenter!
     
     @IBOutlet weak var tableView: UITableView!

@@ -1,20 +1,25 @@
 import UIKit
 
 class SentMemeAsCollectionPresenter: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
-    weak var view: UIViewController!
+    weak var view: SentMemesCollectionViewController!
     let navigator: SentMemesNavigator!
     let interactor = SentMemesInteractor()
     
-    init(view: UIViewController){
+    var imageView: UIImageView?
+    
+    init(view: SentMemesCollectionViewController){
         self.view = view
         self.navigator = SentMemesNavigator(view: view)
     }
     
     // MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         let meme = interactor.getElementAt(indexPath.item)
-        navigator.showMeme(meme)
+        self.imageView = createInitialAnimationState(meme, indexPath: indexPath)
+        
+        UIView.animateWithDuration(0.5,
+            animations: finalAnimationState(imageView!, size: meme.memedImage.size),
+            completion: onCompleteAnimation(meme))
     }
     
     // MARK: UICollectionViewDataSource
@@ -29,6 +34,34 @@ class SentMemeAsCollectionPresenter: NSObject, UICollectionViewDelegate, UIColle
         cell.configCellUIElements(meme)
         
         return cell
+    }
+    
+    func createInitialAnimationState(meme: Meme, indexPath: NSIndexPath) -> UIImageView {
+        let frame = view.collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame
+        var rect = CGRect(x: frame!.origin.x, y: frame!.origin.y + 64, width: frame!.width, height: frame!.height)
+        
+        var imageView = UIImageView(frame: rect)
+        imageView.image = meme.memedImage
+        imageView.contentMode = .ScaleAspectFill
+        view.view.addSubview(imageView)
+        return imageView
+    }
+    
+    func finalAnimationState(view: UIView, size: CGSize) -> (() -> ()) {
+        func finalState() {
+            view.frame = CGRect(x: 0, y: 64, width: size.width, height: size.height)
+        }
+        return finalState
+    }
+    
+
+    func onCompleteAnimation(meme: Meme) -> ((Bool) -> ()){
+        func onComplete(_: Bool)  {
+            self.navigator.showMeme(meme)
+            self.imageView?.removeFromSuperview()
+        }
+        
+        return onComplete
     }
 }
 

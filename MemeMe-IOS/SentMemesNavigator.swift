@@ -11,6 +11,6 @@ class SentMemesNavigator {
         var vc: MemeViewController = view.storyboard?.instantiateViewControllerWithIdentifier("MemeVC") as! MemeViewController
         
         vc.meme = meme
-        self.view.navigationController?.pushViewController(vc, animated: true)
+        self.view.navigationController?.pushViewController(vc, animated: false)
     }
 }

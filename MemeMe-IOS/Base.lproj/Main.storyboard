@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
     </dependencies>
     <scenes>
-        <!--Meme Me-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="MemeEditorViewController" customModule="MemeMe_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,11 +18,14 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlY-AI-VYY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="w77-qy-LWm"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TAR-We-LWU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TAR-We-LWU">
+                                        <color key="tintColor" red="0.036835007798912626" green="0.48128019901963082" blue="0.91117418943695649" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
                                     <barButtonItem title="Camera" systemItem="camera" id="Rhj-Yo-8rn">
                                         <connections>
                                             <action selector="takeAPicture:" destination="vXZ-lx-hvc" id="qzi-Gx-eLd"/>
@@ -30,12 +33,14 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Zwq-6x-fwy"/>
                                     <barButtonItem title="Album" id="Bxt-Qr-xgN">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="pickAPicture:" destination="vXZ-lx-hvc" id="TL0-1x-pIq"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7jb-N7-iYW"/>
                                 </items>
+                                <color key="barTintColor" red="0.03242801829007997" green="0.4236991934863289" blue="0.80216009296956525" alpha="0.44" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="w77-qy-LWm"/>
@@ -52,6 +57,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="67J-RF-KTL">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" red="0.040308247631871887" green="0.52666098371160219" blue="0.99709045981739131" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sW5-6g-Jmn" customClass="MemeEditorTextField" customModule="MemeMe_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -164,7 +170,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Meme Me" id="hFo-fr-qN1">
+                    <navigationItem key="navigationItem" id="hFo-fr-qN1">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="avV-UY-bVl">
                             <connections>
                                 <action selector="shareMeme:" destination="vXZ-lx-hvc" id="Xjh-aq-KJF"/>
@@ -313,10 +319,10 @@
             </objects>
             <point key="canvasLocation" x="3237" y="670"/>
         </scene>
-        <!--Title-->
+        <!--table-->
         <scene sceneID="ISf-25-utk">
             <objects>
-                <viewController id="Ddj-qJ-wm8" customClass="sentMemesViewController" customModule="MemeMe_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ddj-qJ-wm8" customClass="SentMemesViewController" customModule="MemeMe_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y1o-he-byC"/>
                         <viewControllerLayoutGuide type="bottom" id="ho5-d3-7wx"/>
@@ -370,7 +376,7 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="table" image="table" id="YKZ-Sw-WPM"/>
-                    <navigationItem key="navigationItem" title="Title" id="6VT-t0-AGe">
+                    <navigationItem key="navigationItem" id="6VT-t0-AGe">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FPn-mn-vQW"/>
                     </navigationItem>
                     <connections>
@@ -454,7 +460,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omR-zD-Ltu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="337"/>
+            <point key="canvasLocation" x="2235" y="332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bqs-XS-rjG">

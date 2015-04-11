@@ -1,11 +1,11 @@
 import UIKit
 
 class SentMemeAsTablePresenter: NSObject, UITableViewDelegate, UITableViewDataSource {
-    weak var view: UIViewController!
+    weak var view: SentMemesViewController!
     let navigator: SentMemesNavigator!
     let interactor = SentMemesInteractor()
 
-    init(view: UIViewController){
+    init(view: SentMemesViewController){
         self.view = view
         self.navigator = SentMemesNavigator(view: view)
     }
@@ -27,6 +27,7 @@ class SentMemeAsTablePresenter: NSObject, UITableViewDelegate, UITableViewDataSo
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let meme = interactor.getElementAt(indexPath.row)
+        
         navigator.showMeme(meme)
     }
 }

@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe-IOS/SentMemesCollectionViewController.swift"
-            timestampString = "449948385.424943"
+            timestampString = "450372396.508323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16">
+            startingLineNumber = "20"
+            endingLineNumber = "20">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -278,7 +278,7 @@
                   moduleName = "MemeMe-IOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pedrodelgallego/Desktop/ios-test/code/MemeMe-IOS/MemeEditorTextField.swift"
-                  timestampString = "449992183.13319"
+                  timestampString = "450444649.930685"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -293,7 +293,7 @@
                   moduleName = "MemeMe-IOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pedrodelgallego/Desktop/ios-test/code/MemeMe-IOS/MemeEditorTextField.swift"
-                  timestampString = "449992183.13341"
+                  timestampString = "450444649.930963"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "4"
@@ -348,6 +348,22 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe-IOS/SentMemeAsCollectionPresenter.swift"
+            timestampString = "450436847.465347"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
