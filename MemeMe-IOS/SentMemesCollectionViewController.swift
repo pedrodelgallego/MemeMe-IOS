@@ -10,8 +10,4 @@ class SentMemesCollectionViewController: UIViewController {
         collectionView.delegate = presenter
         collectionView.dataSource = presenter
     }
-    
-    override func viewDidDisappear(animated: Bool) {
-        // presenter.imageView.removeFromSuperview()
-    }
 }

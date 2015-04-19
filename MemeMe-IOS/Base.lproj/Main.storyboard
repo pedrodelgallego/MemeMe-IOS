@@ -331,18 +331,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="99K-hT-9gq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="99K-hT-9gq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Uzs-2d-bVs">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="sentMemeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="sentMemeCell" rowHeight="114" id="tys-cd-RvQ" customClass="SentMemeTableViewCell" customModule="MemeMe_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="sentMemeCell" tableViewCell="Uzs-2d-bVs" id="H1D-SR-CgU">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tys-cd-RvQ" id="ozc-08-S9A">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="479"/>
+                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -351,16 +354,24 @@
                             <constraint firstItem="99K-hT-9gq" firstAttribute="top" secondItem="y1o-he-byC" secondAttribute="bottom" id="8NW-8Q-Exv"/>
                             <constraint firstItem="ho5-d3-7wx" firstAttribute="top" secondItem="99K-hT-9gq" secondAttribute="bottom" id="B97-UX-uO5"/>
                             <constraint firstItem="99K-hT-9gq" firstAttribute="leading" secondItem="dLa-SS-sdJ" secondAttribute="leading" id="DuM-3w-c17"/>
+                            <constraint firstAttribute="trailing" secondItem="99K-hT-9gq" secondAttribute="trailing" id="I2o-lf-0HH"/>
+                            <constraint firstItem="ho5-d3-7wx" firstAttribute="top" secondItem="99K-hT-9gq" secondAttribute="bottom" id="PB2-uc-HN0"/>
+                            <constraint firstItem="99K-hT-9gq" firstAttribute="leading" secondItem="dLa-SS-sdJ" secondAttribute="leading" id="oJM-Bk-N2d"/>
+                            <constraint firstItem="99K-hT-9gq" firstAttribute="top" secondItem="y1o-he-byC" secondAttribute="bottom" id="t9b-ga-VoK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="99K-hT-9gq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="B97-UX-uO5"/>
                                 <exclude reference="6z4-Jq-YIT"/>
                                 <exclude reference="8NW-8Q-Exv"/>
                                 <exclude reference="DuM-3w-c17"/>
+                                <exclude reference="I2o-lf-0HH"/>
+                                <exclude reference="oJM-Bk-N2d"/>
+                                <exclude reference="t9b-ga-VoK"/>
+                                <exclude reference="B97-UX-uO5"/>
+                                <exclude reference="PB2-uc-HN0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -368,10 +379,14 @@
                                 <include reference="99K-hT-9gq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="B97-UX-uO5"/>
                                 <include reference="6z4-Jq-YIT"/>
                                 <include reference="8NW-8Q-Exv"/>
                                 <include reference="DuM-3w-c17"/>
+                                <include reference="I2o-lf-0HH"/>
+                                <include reference="oJM-Bk-N2d"/>
+                                <include reference="t9b-ga-VoK"/>
+                                <include reference="B97-UX-uO5"/>
+                                <include reference="PB2-uc-HN0"/>
                             </mask>
                         </variation>
                     </view>
