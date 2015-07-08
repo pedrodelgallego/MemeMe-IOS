@@ -278,7 +278,7 @@
                   moduleName = "MemeMe-IOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pedrodelgallego/Desktop/ios-test/code/MemeMe-IOS/MemeEditorTextField.swift"
-                  timestampString = "451099380.62886"
+                  timestampString = "458042373.09698"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -293,12 +293,12 @@
                   moduleName = "MemeMe-IOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pedrodelgallego/Desktop/ios-test/code/MemeMe-IOS/MemeEditorTextField.swift"
-                  timestampString = "451099380.62996"
+                  timestampString = "458042373.097302"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "4"
                   endingLineNumber = "4"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "59">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -386,7 +386,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe-IOS/SentMemeAsTablePresenter.swift"
@@ -402,7 +402,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe-IOS/SentMemeAsTablePresenter.swift"
@@ -412,6 +412,70 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "finalState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe-IOS/SentMemeSegueAnimation.swift"
+            timestampString = "451176971.498398"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "initialAnimationState(_:cell:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe-IOS/SentMemeSegueAnimation.swift"
+            timestampString = "458040450.28216"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "initialAnimationState(_:cell:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe-IOS/SentMemeSegueAnimation.swift"
+            timestampString = "458040988.186415"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "finalState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe-IOS/SentMemeSegueAnimation.swift"
+            timestampString = "458040997.914441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "onComplete(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

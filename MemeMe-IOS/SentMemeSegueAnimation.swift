@@ -15,6 +15,19 @@ class SentMemeSegueAnimation {
         self.navigator = SentMemesNavigator(view: view)
     }
     
+    func initialAnimationState(view: UIViewController, cell: MemeCollectionViewCell) -> UIImageView {
+        let frame = cell.frame
+        let rect = CGRect(x: frame.origin.x, y: frame.origin.y + 64, width: frame.width, height: frame.height)
+        
+        let imageView = UIImageView(frame: rect)
+        imageView.image = cell.image
+        imageView.contentMode = .ScaleAspectFill
+        
+        view.view.addSubview(imageView)
+        return imageView
+    }
+
+    
     func finalAnimationState(view: UIView, size: CGSize) -> (() -> ()) {
         func finalState() {
             view.frame = CGRect(x: 0, y: 64, width: size.width, height: size.height)
@@ -31,18 +44,9 @@ class SentMemeSegueAnimation {
         return onComplete
     }
     
-    func start(view: UIView, meme: Meme){
+    func startAnimationWithSegue(view: UIView, meme: Meme){
         UIView.animateWithDuration(1,
             animations: finalAnimationState(view, size: meme.memedImage.size),
             completion: onCompleteAnimation(view, meme: meme))
-    }
-
-    func createInitialAnimationState(meme: Meme, frame: CGRect) -> UIImageView {
-        var rect = CGRect(x: frame.origin.x, y: frame.origin.y + 64, width: frame.width, height: frame.height)
-        
-        var imageView = UIImageView(frame: rect)
-        imageView.image = meme.memedImage
-        imageView.contentMode = .ScaleAspectFill
-        return imageView
     }
 }

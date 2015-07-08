@@ -32,7 +32,7 @@ class MemeDataStorageTests: XCTestCase {
         memeDS.saveMeme(meme)
         memeDS.saveMeme(anotherMeme)
 
-        var returnedMeme = memeDS.getElementAt(1)
+        let returnedMeme = memeDS.getElementAt(1)
         XCTAssertEqual(returnedMeme.bottomText, anotherMeme.bottomText, "It should be the second meme")
     }
     
