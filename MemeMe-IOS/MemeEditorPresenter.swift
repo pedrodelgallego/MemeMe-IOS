@@ -24,7 +24,7 @@ class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigati
         view.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             view.imageView.image = image
             view.actionButton.enabled = true
@@ -46,7 +46,7 @@ class MemeEditorPresenter: NSObject, UIImagePickerControllerDelegate, UINavigati
     }
     
     func cameraNotAvailable(){
-        let alert = UIAlertController(title: "Camera is not available", message: "The camera is not available while using the simulator, please deploy de application in your device", preferredStyle: .Alert)
+        var alert = UIAlertController(title: "Camera is not available", message: "The camera is not available while using the simulator, please deploy de application in your device", preferredStyle: .Alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
         view.presentViewController(alert, animated: true){ }

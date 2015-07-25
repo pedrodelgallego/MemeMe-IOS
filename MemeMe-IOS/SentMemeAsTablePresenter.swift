@@ -43,9 +43,10 @@ class SentMemeAsTablePresenter: NSObject, UITableViewDelegate, UITableViewDataSo
         let cell = self.view.tableView.dequeueReusableCellWithIdentifier("sentMemeCell", forIndexPath: indexPath) as! SentMemeTableViewCell;
         let frame = cell.frame
         
-        let rect = CGRect(x: frame.origin.x, y: frame.origin.y + 290, width: frame.width, height: frame.height)
+        var rect = CGRect(x: frame.origin.x, y: frame.origin.y + 290, width: frame.width, height: 0)
         
-        let imageView = UIImageView(frame: rect)
+        var imageView = UIImageView(frame: rect)
+        imageView.alpha = 0.4
         imageView.image = meme.memedImage
         imageView.contentMode = .ScaleAspectFill
         view.view.addSubview(imageView)
@@ -55,6 +56,7 @@ class SentMemeAsTablePresenter: NSObject, UITableViewDelegate, UITableViewDataSo
     func finalAnimationState(view: UIView, size: CGSize) -> (() -> ()) {
         func finalState() {
             view.frame = CGRect(x: 0, y: 64, width: size.width, height: size.height)
+            view.alpha = 1
         }
         return finalState
     }
