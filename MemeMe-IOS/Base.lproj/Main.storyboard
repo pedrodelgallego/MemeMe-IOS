@@ -313,6 +313,7 @@
                     <tabBarItem key="tabBarItem" title="Collection" image="collection" id="DAc-Zt-mud"/>
                     <connections>
                         <outlet property="collectionView" destination="wKC-Xd-TEF" id="ckw-EJ-4Rk"/>
+                        <segue destination="Spb-14-JIu" kind="show" identifier="showMemeFromCollection" id="UA4-Ea-Sik"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rat-pX-a62" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,4 +502,7 @@
         <image name="collection" width="30" height="30"/>
         <image name="table" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UA4-Ea-Sik"/>
+    </inferredMetricsTieBreakers>
 </document>

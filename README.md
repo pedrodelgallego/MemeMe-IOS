@@ -1,10 +1,10 @@
 Architechture
 =============
 
-A simplify version of the VIPER architecture[1]
+A simplify version of the VIPER architecture[1], [2]
 
 [1] http://www.objc.io/issue-13/viper.html
-
+[2] https://realm.io/news/altconf-brice-pollock-250-days-shipping-with-swift-and-viper/
 
 Interactor
 ----------

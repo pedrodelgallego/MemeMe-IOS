@@ -4,13 +4,11 @@ class SentMemeAsCollectionPresenter: NSObject, UICollectionViewDelegate, UIColle
     weak var view: SentMemesCollectionViewController!
     let navigator: SentMemesNavigator!
     let interactor = SentMemesInteractor()
-    let animation: SentMemeSegueAnimationCollection!
     
     
     init(view: SentMemesCollectionViewController){
         self.view = view
         navigator = SentMemesNavigator(view: view)
-        animation = SentMemeSegueAnimationCollection(view: view);
     }
     
     // MARK: UICollectionViewDelegate
@@ -18,9 +16,7 @@ class SentMemeAsCollectionPresenter: NSObject, UICollectionViewDelegate, UIColle
         let meme = interactor.getElementAt(indexPath.item)
         let cell = self.view.collectionView.dequeueReusableCellWithReuseIdentifier("sentMemeItem", forIndexPath: indexPath) as! MemeCollectionViewCell
 
-        var imageView = animation.createInitialAnimationState(meme, frame: cell.frame)
-        view.view.addSubview(imageView)
-        animation.start(imageView, meme: meme)
+        self.navigator.showMeme(meme)
     }
     
     // MARK: UICollectionViewDataSource
